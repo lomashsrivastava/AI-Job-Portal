@@ -16,10 +16,20 @@ export const register = async (req, res) => {
         };
         let profilePhoto = "";
         if (req.file) {
-            const file = req.file;
-            const fileUri = getDataUri(file);
-            const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-            profilePhoto = cloudResponse.secure_url;
+            try {
+                // Ensure Cloudinary credentials exist
+                if (process.env.CLOUD_NAME && process.env.API_KEY && process.env.API_SECRET && process.env.CLOUD_NAME !== 'dummy') {
+                    const file = req.file;
+                    const fileUri = getDataUri(file);
+                    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+                    profilePhoto = cloudResponse.secure_url;
+                } else {
+                    console.log("Skipping Cloudinary upload: Missing or dummy credentials.");
+                }
+            } catch (cloudError) {
+                console.error("Cloudinary Upload Failed (continuing without photo):", cloudError);
+                // Proceed without crashing
+            }
         }
 
         const user = await User.findOne({ email });
