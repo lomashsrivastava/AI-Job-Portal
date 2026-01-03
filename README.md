@@ -4,7 +4,7 @@ A full-stack Job Portal application built with the MERN stack (MongoDB, Express,
 
 ## 🚀 Live Links
 
-- **Frontend (Netlify):** [Click Here](https://ai-job-portal-frontend.netlify.app/) *(Replace with your actual Netlify link)*
+- **Frontend (Netlify):** [Click Here](https://jobporta2026.netlify.app/)
 - **GitHub Pages:** [Click Here](https://lomashsrivastava.github.io/AI-Job-Portal/) *(Replace if different)*
 - **Backend (Render):** [Click Here](https://ai-job-portal-backend.onrender.com/) *(Replace with your actual Render link)*
 
