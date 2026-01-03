@@ -33,6 +33,12 @@ app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        message: "Welcome to AI Job Portal Backend",
+        success: true
+    });
+});
 
 app.listen(PORT, () => {
     connectDB();
