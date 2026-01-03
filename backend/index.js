@@ -17,10 +17,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://jobporta2026.netlify.app'],
+    origin: (origin, callback) => {
+        // Allow requests with no origin (mobile apps, curl, etc) OR our specific frontend
+        const allowedOrigins = ['http://localhost:5173', 'https://jobporta2026.netlify.app'];
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            console.log("Blocked by CORS:", origin); // Log blocked origins to debug
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin']
 }
 
 app.use(cors(corsOptions));
