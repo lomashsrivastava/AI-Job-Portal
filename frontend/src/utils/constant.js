@@ -1,4 +1,4 @@
-const BASE_URL = "https://ai-job-portal-backend-oqmz.onrender.com";
+const BASE_URL = "https://ai-job-portal-production-926a.up.railway.app";
 
 export const USER_API_END_POINT = `${BASE_URL}/api/v1/user`;
 export const JOB_API_END_POINT = `${BASE_URL}/api/v1/job`;
