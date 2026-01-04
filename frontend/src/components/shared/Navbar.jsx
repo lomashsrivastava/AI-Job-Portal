@@ -1,7 +1,7 @@
 import React from 'react'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Button } from '../ui/button'
-import { Avatar, AvatarImage } from '../ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { LogOut, User2 } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -64,6 +64,7 @@ const Navbar = () => {
                                 <PopoverTrigger asChild>
                                     <Avatar className="cursor-pointer">
                                         <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                        <AvatarFallback>CN</AvatarFallback>
                                     </Avatar>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-80">
