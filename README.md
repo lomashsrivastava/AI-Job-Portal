@@ -1,6 +1,32 @@
 # AI Job Portal
 
+<div align="center">
+
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://jobporta2026.netlify.app/)
+  
+  **[🔴 Live Demo (Frontend)](https://jobporta2026.netlify.app/)** | **[🟢 Live Backend (Railway)](https://ai-job-portal-production-926a.up.railway.app/)**
+
+</div>
+
 A full-stack Job Portal application built with the MERN stack (MongoDB, Express, React, Node.js). This platform allows users to search for jobs, apply, and for recruiters to post job openings.
+
+## 📖 How to Use (Walkthrough)
+
+Since this is a portfolio project with a fresh database, follow these steps to explore all features:
+
+1. **Recruiter Flow (To create jobs):**
+   - Click **Signup**.
+   - Select **Role: Recruiter**.
+   - Register a new account.
+   - Go to **Companies** -> Register a new Company.
+   - Go to **Jobs** -> Post a new Job (select the company you just made).
+   
+2. **Student Flow (To apply):**
+   - Logout and Sign Up as a new user with **Role: Student**.
+   - You will now see the job you posted on the Home Page!
+   - Click "Details" and "Apply".
+
+---
 
 ## 🚀 Live Links
 
@@ -55,15 +81,14 @@ A full-stack Job Portal application built with the MERN stack (MongoDB, Express,
 
 ## 🚀 Deployment Instructions
 
-### 1. Backend (Render)
-1. Push this repository to GitHub.
-2. Go to [Render](https://render.com/).
-3. Create a new **Web Service**.
-4. Connect your GitHub repository.
-5. Set `Root Directory` to `backend`.
-6. Set `Build Command` to `npm install`.
-7. Set `Start Command` to `npm start`.
-8. Add Environment Variables from your `.env` file (MONGO_URI, SECRET_KEY, CLOUDINARY_*, etc.).
+### 1. Backend (Railway - Recommended)
+1. Fork/Push this repo to GitHub.
+2. Go to [Railway](https://railway.app/).
+3. Create a **New Project** -> Deploy from GitHub.
+4. Add a **MongoDB** Service (Railway creates it for you).
+5. In your Backend Service variables, connect `MONGO_URI` to the internal MongoDB URL.
+6. Set `Root Directory` to `backend`.
+7. Railway handles the rest!
 
 ### 2. Frontend (Netlify)
 1. Go to [Netlify](https://www.netlify.com/).
