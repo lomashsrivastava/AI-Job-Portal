@@ -73,14 +73,23 @@ export const updateCompany = async (req, res) => {
     try {
         const { name, description, website, location } = req.body;
 
-        let logo = company.logo; // Default to existing logo
+        const file = req.file;
+        let logo = undefined;
+
         if (file) {
-            const fileUri = getDataUri(file);
-            const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-            logo = cloudResponse.secure_url;
+            try {
+                if (process.env.CLOUD_NAME && process.env.API_KEY && process.env.API_SECRET && process.env.CLOUD_NAME !== 'dummy') {
+                    const fileUri = getDataUri(file);
+                    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+                    logo = cloudResponse.secure_url;
+                }
+            } catch (error) {
+                console.log("Cloudinary upload failed (skipping):", error);
+            }
         }
 
-        const updateData = { name, description, website, location, logo };
+        const updateData = { name, description, website, location };
+        if (logo) updateData.logo = logo;
 
         const company = await Company.findByIdAndUpdate(req.params.id, updateData, { new: true });
 
