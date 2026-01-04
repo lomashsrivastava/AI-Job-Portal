@@ -31,7 +31,6 @@ Since this is a portfolio project with a fresh database, follow these steps to e
 ## 🚀 Live Links
 
 - **Frontend (Netlify):** [Click Here](https://jobporta2026.netlify.app/)
-- **GitHub Pages:** [Click Here](https://lomashsrivastava.github.io/AI-Job-Portal/) *(Replace if different)*
 - **Backend (Railway):** [Click Here](https://ai-job-portal-production-926a.up.railway.app/)
 
 ## 🛠️ Tech Stack
