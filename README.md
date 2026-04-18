@@ -108,3 +108,5 @@ Since this is a portfolio project with a fresh database, follow these steps to e
 
 **Author:** Lomash Srivastava  
 **GitHub:** [lomashsrivastava](https://github.com/lomashsrivastava)
+
+Designed And Developed By Lomash Srivastava
